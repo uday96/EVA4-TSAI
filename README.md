@@ -11,3 +11,7 @@ Achieve 99.4% test accuracy on the MNIST dataset with a CNN using less than 20,0
 ## Session 5
 
 Achieve 99.4% test accuracy on the MNIST dataset with a CNN using less than 10,000 parameters and 15 epochs.
+
+## Session 6
+
+Apply L1 and L2 regularization on Session 5 code and compare the models.
