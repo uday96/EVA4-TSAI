@@ -1,7 +1,7 @@
 
 # Session 6 - Regularization
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S6/EVA4-S6-Solution.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S6/EVA4_S6_Solution.ipynb)
 
 ###	Objective
 Using the Session 5 code, run the model for 40 epochs and compare

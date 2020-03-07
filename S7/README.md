@@ -1,7 +1,7 @@
 
 # Session 7 - Advanced Convolutions
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S7/EVA4-S7-Solution.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S7/EVA4_S7_Solution.ipynb)
 
 ###	Objective
 Achieve an accuracy of **80%** on the **CIFAR-10** dataset with the following constraints:
