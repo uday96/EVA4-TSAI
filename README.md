@@ -1,3 +1,4 @@
+
 # EVA4 - TSAI
 
 This repository contains the solutions to the assignments of the  **EVA4**  course conducted by  **The School of AI**
@@ -15,3 +16,8 @@ Achieve 99.4% test accuracy on the MNIST dataset with a CNN using less than 10,0
 ## Session 6
 
 Apply L1 and L2 regularization on Session 5 code and compare the models.
+
+## Session 7
+
+Achieve 80% test accuracy on the CIFAR-10 dataset with a CNN using less than 1M parameters and make use of advanced convolutions.
+
