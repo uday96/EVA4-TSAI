@@ -21,3 +21,7 @@ Apply L1 and L2 regularization on Session 5 code and compare the models.
 
 Achieve 80% test accuracy on the CIFAR-10 dataset with a CNN using less than 1M parameters and make use of advanced convolutions.
 
+## Session 8
+
+Achieve 85% test accuracy on the CIFAR-10 dataset with ResNet18 using image augmentation.
+
