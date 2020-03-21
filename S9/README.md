@@ -1,4 +1,5 @@
 
+
 # Session 9 - Data Augmentation and GradCAM
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S9/EVA4_S9_Solution.ipynb)
@@ -50,44 +51,54 @@ Visualize GradCAM at different convolutional layers to understand where the netw
 #### Correctly Classified Images
 
 GradCAM at different convolutional layers for the class: *Plane*
-<img src="images/gradcam_correct_0_plane.png">
 *Image: Actual: Plane, Predicted: Plane*
 
+<img src="images/gradcam_correct_0_plane.png">
+
 GradCAM at different convolutional layers for the class: *Bird*
+*Image: Actual: Bird, Predicted: Bird*
+
 <img src="images/gradcam_correct_1_bird.png">
-*Image: Actual: Bird, Predicted: Bird*
 
 GradCAM at different convolutional layers for the class: *Bird*
-<img src="images/gradcam_correct_2_bird.png">
 *Image: Actual: Bird, Predicted: Bird*
 
-GradCAM at different convolutional layers for the class: *Truck*
-<img src="images/gradcam_correct_3_truck.png">
-*Image: Actual: Truck, Predicted: Truck*
+<img src="images/gradcam_correct_2_bird.png">
 
 GradCAM at different convolutional layers for the class: *Truck*
-<img src="images/gradcam_correct_4_truck.png">
 *Image: Actual: Truck, Predicted: Truck*
+
+<img src="images/gradcam_correct_3_truck.png">
+
+GradCAM at different convolutional layers for the class: *Truck*
+*Image: Actual: Truck, Predicted: Truck*
+
+<img src="images/gradcam_correct_4_truck.png">
 
 #### Misclassified Images
 
 GradCAM at different convolutional layers for the class: *Truck*
-<img src="images/gradcam_incorrect_0_truck.png">
 *Image: Actual: Ship, Predicted: Truck*
 
+<img src="images/gradcam_incorrect_0_truck.png">
+
 GradCAM at different convolutional layers for the class: *Dog*
-<img src="images/gradcam_incorrect_1_dog.png">
 *Image: Actual: Cat, Predicted: Dog*
 
+<img src="images/gradcam_incorrect_1_dog.png">
+
 GradCAM at different convolutional layers for the class: *Truck*
-<img src="images/gradcam_incorrect_2_truck.png">
 *Image: Actual: Plane, Predicted: Truck*
 
+<img src="images/gradcam_incorrect_2_truck.png">
+
 GradCAM at different convolutional layers for the class: *Plane*
-<img src="images/gradcam_incorrect_3_plane.png">
 *Image: Actual: Deer, Predicted: Plane*
 
+<img src="images/gradcam_incorrect_3_plane.png">
+
 GradCAM at different convolutional layers for the class: *Dog*
-<img src="images/gradcam_incorrect_4_dog.png">
 *Image: Actual: Bird, Predicted: Dog*
+
+<img src="images/gradcam_incorrect_4_dog.png">
 
