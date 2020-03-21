@@ -67,6 +67,6 @@ class VisualizeCam(object):
 					"label": layer
 				})
 			pred_class = self.classes[pred[i][0]]
-			fname = "gradcam_%s_%s.png" % (metric, pred_class)
+			fname = "gradcam_%s_%s_%s.png" % (metric, i, pred_class)
 			self.plot_heatmaps(results_data+heatmaps_data, pred_class, fname)
 		
