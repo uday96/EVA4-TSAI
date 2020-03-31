@@ -28,3 +28,7 @@ Achieve 85% test accuracy on the CIFAR-10 dataset with ResNet18 using image augm
 ## Session 9 - Data Augmentation and GradCAM
 
 Achieve 87% test accuracy on the CIFAR-10 dataset with ResNet18 using albumentations for image augmentation. Implement GradCAM to visualize heatmaps.
+
+## Session 10 - Training and Learning Rates
+
+Achieve 88% test accuracy on the CIFAR-10 dataset with ResNet18. Implement Leslie Smith LR finder to find the best starting learning rate and use ReduceLROnPlateau.
