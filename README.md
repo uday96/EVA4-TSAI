@@ -32,3 +32,7 @@ Achieve 87% test accuracy on the CIFAR-10 dataset with ResNet18 using albumentat
 ## Session 10 - Training and Learning Rates
 
 Achieve 88% test accuracy on the CIFAR-10 dataset with ResNet18. Implement Leslie Smith LR finder to find the best starting learning rate and use ReduceLROnPlateau.
+
+## Session 11 - Super Convergence
+
+Achieve 90% test accuracy on the CIFAR-10 dataset with a custom ResNet architecture and One Cycle Policy for faster convergence.
