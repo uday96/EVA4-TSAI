@@ -88,12 +88,22 @@ Achieved  an accuracy of **90.62%** in 24th epoch.
 
 Visualize GradCAM at different convolutional layers to understand where the network is looking at while prediction.
 
+##### GradCAM at different convolutional layers for the class: Cat
+
 <img src="images/gradcam_incorrect_0_tdog_pcat.png">
+
+##### GradCAM at different convolutional layers for the class: Deer
 
 <img src="images/gradcam_incorrect_1_tcat_pdeer.png">
 
+##### GradCAM at different convolutional layers for the class: Plane
+
 <img src="images/gradcam_incorrect_2_tcar_pplane.png">
 
+##### GradCAM at different convolutional layers for the class: Cat
+
 <img src="images/gradcam_incorrect_3_thorse_pcat.png">
+
+##### GradCAM at different convolutional layers for the class: Ship
 
 <img src="images/gradcam_incorrect_4_thorse_pship.png">
