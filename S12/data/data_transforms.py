@@ -5,6 +5,8 @@ from albumentations import (
     CoarseDropout,
     RandomCrop,
     PadIfNeeded,
+    RGBShift,
+    Rotate
 )
 from albumentations.pytorch import ToTensor
 import numpy as np
@@ -21,6 +23,8 @@ def albumentations_transforms(p=1.0, is_train=False):
 			PadIfNeeded(min_height=72, min_width=72, p=1.0),
 			RandomCrop(height=64, width=64, p=1.0),
 			HorizontalFlip(p=0.25),
+			Rotate(limit=15, p=0.25),
+			RGBShift(r_shift_limit=20, g_shift_limit=20, b_shift_limit=20, p=0.25),
 			CoarseDropout(max_holes=1, max_height=32, max_width=32, min_height=8,
 						min_width=8, fill_value=mean*255.0, p=0.5),
 		])

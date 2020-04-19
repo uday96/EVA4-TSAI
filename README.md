@@ -36,3 +36,7 @@ Achieve 88% test accuracy on the CIFAR-10 dataset with ResNet18. Implement Lesli
 ## Session 11 - Super Convergence
 
 Achieve 90% test accuracy on the CIFAR-10 dataset with a custom ResNet architecture and One Cycle Policy for faster convergence.
+
+## Session 12 - Object Localization
+
+Achieve 50% test accuracy on the tiny-imagenet-200 dataset. Make a custom dataset of 50 dogs and find optimal template anchor boxes.
