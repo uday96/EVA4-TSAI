@@ -97,4 +97,4 @@ Centroids:
 
 Mean IOU: 0.8979057995199584
 ```
-<img src="images/k7_clustered_boxes.png">
+<img src="images/k7_clustered_bboxes.png">
