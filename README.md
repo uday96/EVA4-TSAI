@@ -40,3 +40,8 @@ Achieve 90% test accuracy on the CIFAR-10 dataset with a custom ResNet architect
 ## Session 12 - Object Localization
 
 Achieve 50% test accuracy on the tiny-imagenet-200 dataset. Make a custom dataset of 50 dogs and find optimal template anchor boxes.
+
+## Session 13 - YoloV2&3
+
+Perform object detection using OpenCV Yolo implementation. Create a custom dataset of a unique object not present in the existing COCO classess and train YoloV3 on the custom class.
+
