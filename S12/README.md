@@ -1,5 +1,5 @@
 
-# Session 11 - Object Localization
+# Session 12 - Object Localization
 
 ## Assignment A
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S12/EVA4_S12_A_Solution.ipynb)
