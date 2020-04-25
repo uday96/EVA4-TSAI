@@ -51,11 +51,13 @@ Training Custom Dataset on for YoloV3
 #### YouTube Video
 A video of minions found on YouTube was passed through the trained model. The video can be found at [https://youtu.be/WRHMwZyMcu4](https://youtu.be/WRHMwZyMcu4)
 
+[![YoloV3-Minion-Detector](https://img.youtube.com/vi/WRHMwZyMcu4/0.jpg)](https://www.youtube.com/watch?v=WRHMwZyMcu4)
+
 #### Detection on Unseen Images
 Tried to perform object detection on few unseen photos clicked on my camera and from the internet
 
-<img src="YoloV3/detected_unseen_images/img03.jpg">
+<img src="YoloV3/detected_unseen_images/img03.jpg" height="300">
 
-<img src="YoloV3/detected_unseen_images/img06.jpg">
+<img src="YoloV3/detected_unseen_images/img06.jpg" width="350">
 
-<img src="YoloV3/detected_unseen_images/img08.jpg">
+<img src="YoloV3/detected_unseen_images/img08.jpg" height="300">
