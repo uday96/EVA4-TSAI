@@ -1,4 +1,5 @@
 
+
 # EVA4 - TSAI
 
 This repository contains the solutions to the assignments of the  **EVA4**  course conducted by  **The School of AI**
@@ -45,3 +46,6 @@ Achieve 50% test accuracy on the tiny-imagenet-200 dataset. Make a custom datase
 
 Perform object detection using OpenCV Yolo implementation. Create a custom dataset of a unique object not present in the existing COCO classess and train YoloV3 on the custom class.
 
+## Session 14-15 - RCNN
+
+Create a custom dataset for monocular depth estimation and segmentation simultaneously.
