@@ -90,7 +90,7 @@ Create a custom dataset for monocular depth estimation and segmentation simultan
 | **fg_mask** | 100 | (105,w) |  |  | 404K | <img src="images/fg_mask_sample.jpg"> |
 | **fg_bg** | 400k | (224,224,3) | (0.5056, 0.4969, 0.4817) | (0.2486, 0.2490, 0.2604) | 4.2G |  <img src="images/fg_bg_sample.jpg"> |
 | **fg_bg_mask** | 400k | (224,224) | (0.0454) | (0.2038) | 1.6G | <img src="images/fg_bg_mask_sample.jpg"> |
-| **fg_bg_depth** | 400k | (224,224) | (0.4334) | 0.2715 | 1.6G | <img src="images/fg_bg_depth_sample.jpg"> |
+| **fg_bg_depth** | 400k | (224,224) | (0.4334) | (0.2715) | 1.6G | <img src="images/fg_bg_depth_sample.jpg"> |
 
 ### Dataset Link
 
@@ -108,6 +108,6 @@ Create a custom dataset for monocular depth estimation and segmentation simultan
 	 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S14-15/EVA4_S15A_gen_fg_bg.ipynb)
  - Code to generate depth maps for foreground overlayed on background: 
 	 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S14-15/EVA4_S15A_gen_fg_bg_depth_maps.ipynb)
-	 - [Forked Repo](https://github.com/uday96/DenseDepth)
+	 - [Forked Repo](https://github.com/uday96/DenseDepth/tree/cars_fg)
  - Code to compute the combine the dataset and analyse the statistics:
 	 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S14-15/EVA4_S15A_data_statistics.ipynb)
