@@ -40,7 +40,9 @@ Model definition file: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/mode
 #### Architecture
 The model follows an encoder-decoder architecture. It consists of a common encoder and two decoders, for mask prediction and depth map prediction respectively.
 - The encoder uses ResNet blocks to extract the visual features.
-- The decoder uses skip connections from the encoder and bilinear interpolation to upscale the features and construct the mask and depth maps.
+- The decoder uses skip connections from the encoder and transpose convolutions to upscale the features and construct the mask and depth maps.
+
+<img src="images/dnn_architecture.png">
 
 #### Parameters Count
 
