@@ -1,8 +1,30 @@
 
-# Session 14-15 - RCNN
+
+# Session 14 - Dataset For Monocular Depth Estimation and Segmentation
 
 ###	Objective
 Create a custom dataset for monocular depth estimation and segmentation simultaneously.
+
+Since we do not have access to a depth camera, we use a pre-trained depth model to generate the depth maps which will be used as the ground truth for our model.
+
+### Dataset Samples
+Background:
+<img src="images/bg_strip.png">
+
+Foreground:
+<img src="images/fg_strip.png">
+
+Foreground Mask:
+<img src="images/fg_mask_strip.png">
+
+Foreground-Background:
+<img src="images/fg_bg_strip.png">
+
+Foreground-Background Mask:
+<img src="images/fg_bg_mask_strip.png">
+
+Foreground-Background Depth:
+<img src="images/fg_bg_depth_strip.png">
 
 ### Dataset Creation
 
@@ -75,6 +97,53 @@ Create a custom dataset for monocular depth estimation and segmentation simultan
  - Std: [0.2715]
 
 <img src="images/fg_bg_depth.png">
+
+### File Structure
+
+            ├── bg
+            |   └───── bg_00.jpg
+            |   └───── bg_01.jpg
+            |   └───── .... 
+            |   └───── bg_99.jpg
+            |
+            |── fg
+            |   └───── fg_00.png
+            |   └───── fg_01.png
+            |   └───── ....
+            |   └───── fg_99.png
+            |
+            |── fg_mask
+            |   └───── fg_00.jpg
+            |   └───── fg_01.jpg
+            |   └───── ....
+            |   └───── fg_99.jpg
+            |
+            |── fg_bg
+            |   └───── bg_00
+            |   |      └───── bg_00_fg_<0-99>_<T/F>_<0-4k>.jpg
+            |   └───── ...
+	        |   └───── bg_99
+            |   |      └───── bg_99_fg_<0-99>_<T/F>_<0-4k>.jpg
+            |
+	        |── fg_bg_masks
+            |   └───── bg_00
+            |   |      └───── bg_00_fg_<0-99>_<T/F>_<0-4k>.jpg
+            |   └───── ...
+	        |   └───── bg_99
+            |   |      └───── bg_99_fg_<0-99>_<T/F>_<0-4k>.jpg
+            |
+	        |── fg_bg_depth
+            |   └───── bg_00
+            |   |      └───── bg_00_fg_<0-99>_<T/F>_<0-4k>.jpg
+            |   └───── ...
+	        |   └───── bg_99
+            |   |      └───── bg_99_fg_<0-99>_<T/F>_<0-4k>.jpg
+	        |
+            |── labels
+            |   └───── bg_00_label_info.txt
+            |   └───── bg_01_label_info.txt
+            |   └───── ....
+            |   └───── bg_99_label_info.txt
 
 ### Dataset Statistics
 
