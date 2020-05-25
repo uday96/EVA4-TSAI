@@ -4,16 +4,10 @@
 ###	Objective
 Create a custom dataset for monocular depth estimation and segmentation simultaneously.
 
-1.  **Background (bg):** Select "scene" images. Like the front of shops, etc. Download 100 such backgrounds.
-2.  **Foreground (fg):** Find or make 100 images of objects with transparent background.
-3.  **Foreground mask (fg_mask):** Create 100 masks, one per foreground.
-4.  **Foreground overlayed on background (fg_bg):** Overlay the foreground on top of background randomly. Flip foreground as well. We call this fg_bg.
-5.  **Foreground overlayed on background mask (fg_bg_mask):**. Create equivalent masks for fg_bg images.
-6. **Foreground overlayed on background depth maps (fg_bg_depth):** Create equivalent depth maps for fg_bg images.
-
 ### Dataset Creation
 
 #### Background (bg)
+ - "scene" images. Like the front of shops, etc.
  - 100 images of streets were downloaded from the internet.
  - Each image was resized to 224 x 224
  - Number of images: 100
@@ -25,6 +19,7 @@ Create a custom dataset for monocular depth estimation and segmentation simultan
 <img src="images/bg.png">
 
 #### Foreground (fg)
+ - Images of objects with transparent background
  - 100 images of footballers were downloaded from the internet.
  - Using GIMP, the foreground was cutout. and the background was made transparent by adding an alpha layer.
  - Each image was rescaled to keep height 105 and resizing width while maintaining aspect ratio.
@@ -83,14 +78,12 @@ Create a custom dataset for monocular depth estimation and segmentation simultan
 
 ### Dataset Statistics
 
-|  | # | dim | mean | std | size | img |
-|---|---|---|---|---|---|---|
-| **bg** | 100 | (224,224,3) | (0.5039, 0.5001, 0.4849) | (0.2465, 0.2463, 0.2582) | 2.5M | <img src="images/bg_sample.jpg" width="70"> |
-| **fg** | 100 | (105,w,4) |  |  | 1.2M | <img src="images/fg_sample.png" height="60"> |
-| **fg_mask** | 100 | (105,w) |  |  | 404K | <img src="images/fg_mask_sample.jpg" height="60"> |
-| **fg_bg** | 400k | (224,224,3) | (0.5056, 0.4969, 0.4817) | (0.2486, 0.2490, 0.2604) | 4.2G |  <img src="images/fg_bg_sample.jpg" width="70"> |
-| **fg_bg_mask** | 400k | (224,224) | (0.0454) | (0.2038) | 1.6G | <img src="images/fg_bg_mask_sample.jpg" width="70"> |
-| **fg_bg_depth** | 400k | (224,224) | (0.4334) | (0.2715) | 1.6G | <img src="images/fg_bg_depth_sample.jpg" width="70"> |
+| Type | Dimensions | Mean | Std |
+|---|---|---|---|
+| **Background** | (224,224,3) | (0.5039, 0.5001, 0.4849) | (0.2465, 0.2463, 0.2582) |
+| **Foreground-Background** | (224,224,3) | (0.5056, 0.4969, 0.4817) | (0.2486, 0.2490, 0.2604) |
+| **Foreground-Background Mask** | (224,224) | (0.0454) | (0.2038) |
+| **Foreground-Background Depth** | (224,224) | (0.4334) | (0.2715) |
 
 ### Dataset Link
 
@@ -98,6 +91,17 @@ Create a custom dataset for monocular depth estimation and segmentation simultan
  - Size:
 	 - Zip: 5G
 	 - Unzip: 7.3G 
+
+| Type | Count | size |
+|---|---|---|
+| **Background** | 100 | 2.5M |
+| **Foreground** | 100 | 1.2M |
+| **Foreground Mask** | 100 | 404K |
+| **Foreground-Background** | 400,000 | 4.2G |
+| **Foreground-Background Mask** | 400,000 | 1.6G |
+| **Foreground-Background Depth** | 400,000 | 1.6G |
+| **Total** | 1,200,300 | 7.3G |
+
 
 ### Dataset Visualization
 <img src="images/dataset.png">
