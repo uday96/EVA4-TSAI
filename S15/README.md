@@ -17,6 +17,19 @@ Dataset Link: https://drive.google.com/file/d/1KY-6ndddnDSXTp974YeubFKEMTbKmqiH/
 
 Dataset Creation: [https://github.com/uday96/EVA4-TSAI/tree/master/S14-15](https://github.com/uday96/EVA4-TSAI/tree/master/S14-15)
 
+### Dataset Samples
+Background:
+<img src="images/bg_strip.png">
+
+Foreground-Background:
+<img src="images/fg_bg_strip.png">
+
+Foreground-Background Mask:
+<img src="images/fg_bg_mask_strip.png">
+
+Foreground-Background Depth:
+<img src="images/fg_bg_depth_strip.png">
+
 #### Notations
 - Background image: **bg**
 - Foregroung overlayed on background: **fg_bg**
