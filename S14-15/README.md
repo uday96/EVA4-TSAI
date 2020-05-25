@@ -85,12 +85,12 @@ Create a custom dataset for monocular depth estimation and segmentation simultan
 
 |  | # | dim | mean | std | size | img |
 |---|---|---|---|---|---|---|
-| **bg** | 100 | (224,224,3) | (0.5039, 0.5001, 0.4849) | (0.2465, 0.2463, 0.2582) | 2.5M | <img src="images/bg_sample.jpg"> |
-| **fg** | 100 | (105,w,4) |  |  | 1.2M | <img src="images/fg_sample.png"> |
-| **fg_mask** | 100 | (105,w) |  |  | 404K | <img src="images/fg_mask_sample.jpg"> |
-| **fg_bg** | 400k | (224,224,3) | (0.5056, 0.4969, 0.4817) | (0.2486, 0.2490, 0.2604) | 4.2G |  <img src="images/fg_bg_sample.jpg"> |
-| **fg_bg_mask** | 400k | (224,224) | (0.0454) | (0.2038) | 1.6G | <img src="images/fg_bg_mask_sample.jpg"> |
-| **fg_bg_depth** | 400k | (224,224) | (0.4334) | (0.2715) | 1.6G | <img src="images/fg_bg_depth_sample.jpg"> |
+| **bg** | 100 | (224,224,3) | (0.5039, 0.5001, 0.4849) | (0.2465, 0.2463, 0.2582) | 2.5M | <img src="images/bg_sample.jpg" width="70"> |
+| **fg** | 100 | (105,w,4) |  |  | 1.2M | <img src="images/fg_sample.png" height="60"> |
+| **fg_mask** | 100 | (105,w) |  |  | 404K | <img src="images/fg_mask_sample.jpg" height="60"> |
+| **fg_bg** | 400k | (224,224,3) | (0.5056, 0.4969, 0.4817) | (0.2486, 0.2490, 0.2604) | 4.2G |  <img src="images/fg_bg_sample.jpg" width="70"> |
+| **fg_bg_mask** | 400k | (224,224) | (0.0454) | (0.2038) | 1.6G | <img src="images/fg_bg_mask_sample.jpg" width="70"> |
+| **fg_bg_depth** | 400k | (224,224) | (0.4334) | (0.2715) | 1.6G | <img src="images/fg_bg_depth_sample.jpg" width="70"> |
 
 ### Dataset Link
 
