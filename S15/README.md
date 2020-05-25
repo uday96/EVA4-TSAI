@@ -42,7 +42,7 @@ The model follows an encoder-decoder architecture. It consists of a common encod
 - The encoder uses ResNet blocks to extract the visual features.
 - The decoder uses skip connections from the encoder and transpose convolutions to upscale the features and construct the mask and depth maps.
 
-<img src="images/dnn_architecture.png">
+<img src="images/dnn_architecture.png" height="650">
 
 #### Parameters Count
 
