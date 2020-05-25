@@ -1,5 +1,8 @@
 # Session 15 - Monocular Depth Estimation and Segmentation
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/uday96/EVA4-TSAI/blob/master/S15/EVA4_S15_Solution.ipynb)
+
+
 ### Objective
 Given an image with foreground objects and background image, predict the depth map as well as a mask for the foreground object.
 
@@ -11,6 +14,7 @@ A custom dataset will be used to train this model, which consists of:
 - 400k depth maps for the foreground overlayed on background images
 
 Dataset Link: https://drive.google.com/file/d/1KY-6ndddnDSXTp974YeubFKEMTbKmqiH/view?usp=sharing
+
 Dataset Creation: [https://github.com/uday96/EVA4-TSAI/tree/master/S14-15](https://github.com/uday96/EVA4-TSAI/tree/master/S14-15)
 
 #### Notations
@@ -24,13 +28,14 @@ Dataset Creation: [https://github.com/uday96/EVA4-TSAI/tree/master/S14-15](https
 ### Model
 
 The inputs to the model are **bg** and **fg_bg**.
-- bg: `[3 x 224 x 224]`
+- bg   : `[3 x 224 x 224]`
 - fg_bg: `[3 x 224 x 224]`
 
 The outputs of the model are **mask_pred** and **depth_pred**.
 - mask_pred: `[1 x 224 x 224]`
 - depth_pred: `[1 x 224 x 224]`
 
+Model definition file: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/depth_and_mask_dnn.py](https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/depth_and_mask_dnn.py)
 
 #### Architecture
 The model follows an encoder-decoder architecture. It consists of a common encoder and two decoders, for mask prediction and depth map prediction respectively.
@@ -62,7 +67,7 @@ The model follows an encoder-decoder architecture. It consists of a common encod
 
 ### Image Augmentation
 - **Resize**:
-	- Downscale the images to be able to traing for lower dimensions first.
+	- Downscale the images to be able to train for lower dimensions first.
 	- Applied on **bg**, **fg_bg**, **fg_bg_mask** and **fg_bg_depth**.
 - **RGBShift** & **HueSaturationValue**:
 	- Used to reduce the dependency on image colours for prediction.
@@ -76,10 +81,12 @@ The model follows an encoder-decoder architecture. It consists of a common encod
 - **RandomRotate**:
 	- Images were randomly rotated within (-15,15) degrees.
 	- Applied on **bg**, **fg_bg**, **fg_bg_mask** and **fg_bg_depth**.
-	- Here, the all the 4 images were rotated in the same direction and angle to maintain the orientation.
+	- Here, all the 4 images were rotated in the same direction and angle to maintain the orientation.
 - **CoarseDropout**:
 	- Used to force the network to extract more features by cutting out some parts of the image
 	-  Applied randomly to **bg** and **fg_bg** images.
+
+Image augmentation file: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/data/data_transforms.py](https://github.com/uday96/EVA4-TSAI/blob/master/S15/data/data_transforms.py)
 
 ### Loss Function
 
@@ -99,6 +106,8 @@ We can get results by just using **L1 loss** too, but using **SSIM** and **Edge 
 
 **BCE loss** could construct the structure of the prediction but was not able to get a proper constrast for the mask and sharpness for mask and depth images.
 
+Loss function file: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/loss.py](https://github.com/uday96/EVA4-TSAI/blob/master/S15/loss.py)
+
 ### Accuracy Metrics
 
 We need some metrics to help us understand how the model is performing and to be able to compare two models. The notion of accuracy is different here because we have to compare two images.
@@ -114,17 +123,17 @@ Calculation:
 
 #### t < 1.25
 - The idea here is that, the pixel values need not be asolutely the same.
-- We take the ratio of each pixel and verify if the it is within a scale of 1.25
+- We take the ratio of each pixel and verify if it is within a scale of 1.25
 - This measure is in the context of the images being relatively the same.
 - The higher the `t<1.25` value, the better the predictions
 - Similarly calculate `t<1.25^2`  and `t<1.25^3`
 
-While calculating `t<1.25`, we want the ratio of pixels to within a threshold i.e 1.25. But if the value of pixel is less than 0.1 then even though the pixel values are close the ratio scale changes.
+While calculating `t<1.25`, we want the ratio of pixels to be within a threshold i.e 1.25. But if the value of pixel is less than 0.1 then even though the pixel values are close the ratio scale changes.
 For ex, 0.00001 and 0.000001 are very close and we want them to contribute positively for our accuracy but the ratio is 10 which reduces the accuracy. So we clamp the tensors to 0.1 and 1.  
 
 Calculation:
 
-	gt = torch.clamp(gt, min=0.1, max=1)
+    gt = torch.clamp(gt, min=0.1, max=1)
     pred = torch.clamp(pred, min=0.1, max=1)
 
     thresh = torch.max((gt / pred), (pred / gt))
@@ -133,10 +142,11 @@ Calculation:
     a2 = (thresh < 1.25 ** 2).float().mean()
     a3 = (thresh < 1.25 ** 3).float().mean()
 
+Testing or validation file: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/test.py](https://github.com/uday96/EVA4-TSAI/blob/master/S15/test.py)
 
 ### Training and Validation
 
-The model was first trained on smaller resolutions of `64x64` first. Then trained on `128x128` and finally on `224x224`.
+The model was first trained on smaller resolutions of `64x64` first. Then trained on `128x128` and finally on `224x224`for faster convergence.
 
 Since there are storage and compute restrictions on colab, I was not able to use large batch sizes for higher resolutions and this in turn was increasing the time taken per epoch.
 To handle this, I was saving the predictions and model after a chunk of batches to be able to monitor the progress while running for a small number of epochs. Using the saved model, I could again load it and continue training the model.
@@ -165,8 +175,10 @@ Validation Metrics:
     Depth :  0.7569,   0.9244,    0.9743,    0.0909
     Avg   :  0.8688,   0.9555,    0.9822,    0.0757
     
-    
+Saved Model Link: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/saved_models/im64_l0.1863_rms0.0760_t0.8684.pth](https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/saved_models/im64_l0.1863_rms0.0760_t0.8684.pth)
+
 Visualization:
+
 <img src="images/viz_64.png">
 
 #### 128x128
@@ -189,8 +201,10 @@ Validation Metrics:
 	Depth :  0.7558,   0.9205,    0.9722,    0.0926
 	Avg   :  0.8725,   0.9565,    0.9834,    0.0667
     
-    
+Saved Model Link: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/saved_models/im128_l0.1473_rms0.0666_t0.8726.pth](https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/saved_models/im128_l0.1473_rms0.0666_t0.8726.pth)
+
 Visualization:
+
 <img src="images/viz_128.png">
 
 #### 224x224
@@ -213,7 +227,9 @@ Validation Metrics:
 	Depth :  0.7280,   0.9028,    0.9623,    0.1015
 	Avg   :  0.8601,   0.9487,    0.9792,    0.0682
     
-    
+Saved Model Link: [https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/saved_models/im224_l0.1444_rms0.0682_t0.8593.pth](https://github.com/uday96/EVA4-TSAI/blob/master/S15/models/saved_models/im224_l0.1444_rms0.0682_t0.8593.pth)
+
 Visualization:
+
 <img src="images/viz_224.png">
 
