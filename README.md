@@ -49,3 +49,8 @@ Perform object detection using OpenCV Yolo implementation. Create a custom datas
 ## Session 14-15 - RCNN
 
 Create a custom dataset for monocular depth estimation and segmentation simultaneously.
+
+## Session 15 - Transfer Learning
+
+Use the dataset created in Session 14 and build a monocular depth estimation and segmentation model.
+
